@@ -41,6 +41,9 @@
     <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Appccelerate.Fundamentals">
+      <HintPath>..\..\vendors\Appccelerate.Fundamentals\portable-windows8+net45+wp80\Appccelerate.Fundamentals.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
   </ItemGroup>

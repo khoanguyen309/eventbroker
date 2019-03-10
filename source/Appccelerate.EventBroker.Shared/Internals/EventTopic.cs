@@ -65,7 +65,10 @@ namespace Appccelerate.EventBroker.Internals
 
         public void AddPublication(IPublication publication)
         {
-            Ensure.ArgumentNotNull(publication, "publication");
+            if (publication == null)
+            {
+                throw new ArgumentNullException(nameof(publication));
+            }
 
             this.Clean();
             if (!publication.AllowsMultipleRegistrationsOnSamePublisher)
@@ -130,7 +133,10 @@ namespace Appccelerate.EventBroker.Internals
 
         public void RemoveSubscription(object subscriber, MethodInfo handlerMethod)
         {
-            Ensure.ArgumentNotNull(handlerMethod, "handlerMethod");
+            if (handlerMethod == null)
+            {
+                throw new ArgumentNullException(nameof(handlerMethod));
+            }
 
             this.Clean();
 
@@ -146,7 +152,10 @@ namespace Appccelerate.EventBroker.Internals
 
         public void DescribeTo(TextWriter writer)
         {
-            Ensure.ArgumentNotNull(writer, "writer");
+            if (writer == null)
+            {
+                throw new ArgumentNullException(nameof(writer));
+            }
 
             writer.Write("EventTopic: ");
             writer.Write(this.Uri);

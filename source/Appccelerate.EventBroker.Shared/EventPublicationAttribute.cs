@@ -79,7 +79,10 @@ namespace Appccelerate.EventBroker
         /// <param name="matcherTypes">The matcher types.</param>
         public EventPublicationAttribute(string topic, HandlerRestriction handlerRestriction, params Type[] matcherTypes)
         {
-            Ensure.ArgumentNotNullOrEmpty(topic, "topic");
+            if (string.IsNullOrEmpty(topic))
+            {
+                throw new ArgumentNullException(nameof(topic));
+            }
 
             this.topic = topic;
             this.handlerRestriction = handlerRestriction;

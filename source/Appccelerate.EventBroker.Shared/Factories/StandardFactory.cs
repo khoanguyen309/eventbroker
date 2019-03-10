@@ -153,7 +153,10 @@ namespace Appccelerate.EventBroker.Factories
         /// <returns>A new subscription execution handler.</returns>
         public virtual IHandler CreateHandler(Type handlerType)
         {
-            Ensure.ArgumentNotNull(handlerType, "handlerType");
+            if (handlerType == null)
+            {
+                throw new ArgumentNullException(nameof(handlerType));
+            }
 
             AssertIsHandler(handlerType);
 
@@ -169,7 +172,10 @@ namespace Appccelerate.EventBroker.Factories
         /// </returns>
         public virtual IPublicationMatcher CreatePublicationMatcher(Type matcherType)
         {
-            Ensure.ArgumentNotNull(matcherType, "matcherType");
+            if (matcherType == null)
+            {
+                throw new ArgumentNullException(nameof(matcherType));
+            }
 
             AssertIsPublicationMatcher(matcherType);
 
@@ -185,7 +191,10 @@ namespace Appccelerate.EventBroker.Factories
         /// </returns>
         public virtual ISubscriptionMatcher CreateSubscriptionMatcher(Type matcherType)
         {
-            Ensure.ArgumentNotNull(matcherType, "matcherType");
+            if (matcherType == null)
+            {
+                throw new ArgumentNullException(nameof(matcherType));
+            }
 
             AssertIsSubscriptionMatcher(matcherType);
 

@@ -48,8 +48,15 @@ namespace Appccelerate.EventBroker.Internals.Inspection
 
         public EventInfo ScanPublisherForEvent(object publisher, string eventName)
         {
-            Ensure.ArgumentNotNull(publisher, "publisher");
-            Ensure.ArgumentNotNullOrEmpty(eventName, "eventName");
+            if (publisher == null)
+            {
+                throw new ArgumentNullException(nameof(publisher));
+            }
+
+            if (string.IsNullOrEmpty(eventName))
+            {
+                throw new ArgumentNullException(nameof(eventName));
+            }
 
             EventInfo eventInfo = publisher.GetType().GetEvent(eventName);
 

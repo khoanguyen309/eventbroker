@@ -30,7 +30,10 @@ namespace Appccelerate.EventBroker
         /// <returns>Returns the specified exception to allow writing throw exception.preserveStackTrace().</returns>
         public static Exception PreserveStackTrace(this Exception exception)
         {
-            Ensure.ArgumentNotNull(exception, "exception");
+            if (exception == null)
+            {
+                throw new ArgumentNullException(nameof(exception));
+            }
 
 #if !SILVERLIGHT
             var remoteStackTraceString = typeof(Exception).GetField("_remoteStackTraceString", BindingFlags.Instance | BindingFlags.NonPublic);

@@ -82,7 +82,10 @@ namespace Appccelerate.EventBroker.Internals.Subscriptions
 
         public void DescribeTo(TextWriter writer)
         {
-            Ensure.ArgumentNotNull(writer, "writer");
+            if (writer == null)
+            {
+                throw new ArgumentNullException(nameof(writer));
+            }
 
             if (!this.subscriber.IsAlive)
             {

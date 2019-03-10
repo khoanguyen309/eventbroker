@@ -78,7 +78,10 @@ namespace Appccelerate.EventBroker.Internals.Publications
 
         public virtual void DescribeTo(TextWriter writer)
         {
-            Ensure.ArgumentNotNull(writer, "writer");
+            if (writer == null)
+            {
+                throw new ArgumentNullException(nameof(writer));
+            }
 
             if (!this.publisher.IsAlive)
             {

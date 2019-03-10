@@ -39,7 +39,10 @@ namespace Appccelerate.EventBroker.Handlers
         
         public override void Handle(IEventTopicInfo eventTopic, object subscriber, object sender, EventArgs e, IDelegateWrapper delegateWrapper)
         {
-            Ensure.ArgumentNotNull(delegateWrapper, "delegateWrapper");
+            if (delegateWrapper == null)
+            {
+                throw new ArgumentNullException(nameof(delegateWrapper));
+            }
 
             try
             {

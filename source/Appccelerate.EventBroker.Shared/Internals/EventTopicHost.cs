@@ -95,7 +95,10 @@ namespace Appccelerate.EventBroker.Internals
         /// <param name="writer">The writer.</param>
         public void DescribeTo(TextWriter writer)
         {
-            Ensure.ArgumentNotNull(writer, "writer");
+            if (writer == null)
+            {
+                throw new ArgumentNullException(nameof(writer));
+            }
 
             foreach (IEventTopic eventTopic in this.eventTopics.Values)
             {

@@ -58,7 +58,10 @@ namespace Appccelerate.EventBroker.Internals
         /// <param name="matchers">The matchers.</param>
         public void AddPublication(string topic, object publisher, string eventName, HandlerRestriction handlerRestriction, params IPublicationMatcher[] matchers)
         {
-            Ensure.ArgumentNotNull(publisher, "publisher");
+            if (publisher == null)
+            {
+                throw new ArgumentNullException(nameof(publisher));
+            }
 
             EventInfo eventInfo = this.eventInspector.ScanPublisherForEvent(publisher, eventName);
 
@@ -228,7 +231,10 @@ namespace Appccelerate.EventBroker.Internals
         /// <param name="matchers">The subscription matchers.</param>
         public void AddSubscription(string topic, object subscriber, EventHandler handlerMethod, IHandler handler, params ISubscriptionMatcher[] matchers)
         {
-            Ensure.ArgumentNotNull(handlerMethod, "handlerMethod");
+            if (handlerMethod == null)
+            {
+                throw new ArgumentNullException(nameof(handlerMethod));
+            }
 
             this.AddSubscription(topic, subscriber, handler, matchers, handlerMethod.Method);
         }
@@ -244,8 +250,15 @@ namespace Appccelerate.EventBroker.Internals
         /// <param name="matchers">The subscription matchers.</param>
         public void AddSubscription<TEventArgs>(string topic, object subscriber, EventHandler<TEventArgs> handlerMethod, IHandler handler, params ISubscriptionMatcher[] matchers) where TEventArgs : EventArgs
         {
-            Ensure.ArgumentNotNull(handler, "handler");
-            Ensure.ArgumentNotNull(handlerMethod, "handlerMethod");
+            if (handler == null)
+            {
+                throw new ArgumentNullException(nameof(handler));
+            }
+
+            if (handlerMethod == null)
+            {
+                throw new ArgumentNullException(nameof(handlerMethod));
+            }
 
             IEventTopic eventTopic = this.eventTopicHost.GetEventTopic(topic);
 
@@ -263,21 +276,30 @@ namespace Appccelerate.EventBroker.Internals
 
         public void AddSubscription(string topic, object subscriber, Action<EventArgs> handlerMethod, IHandler handler, params ISubscriptionMatcher[] matchers)
         {
-            Ensure.ArgumentNotNull(handlerMethod, "handlerMethod");
+            if (handlerMethod == null)
+            {
+                throw new ArgumentNullException(nameof(handlerMethod));
+            }
 
             this.AddSubscription(topic, subscriber, handler, matchers, handlerMethod.Method);
         }
 
         public void AddSubscription<TEventArgValue>(string topic, object subscriber, Action<TEventArgValue> handlerMethod, IHandler handler, params ISubscriptionMatcher[] matchers)
         {
-            Ensure.ArgumentNotNull(handlerMethod, "handlerMethod");
+            if (handlerMethod == null)
+            {
+                throw new ArgumentNullException(nameof(handlerMethod));
+            }
 
             this.AddSubscription(topic, subscriber, handler, matchers, handlerMethod.Method);
         }
 
         public void AddSubscription(string topic, object subscriber, Action handlerMethod, IHandler handler, params ISubscriptionMatcher[] matchers)
         {
-            Ensure.ArgumentNotNull(handlerMethod, "handlerMethod");
+            if (handlerMethod == null)
+            {
+                throw new ArgumentNullException(nameof(handlerMethod));
+            }
 
             this.AddSubscription(topic, subscriber, handler, matchers, handlerMethod.Method);
         }
@@ -290,7 +312,10 @@ namespace Appccelerate.EventBroker.Internals
         /// <param name="handlerMethod">The handler method.</param>
         public void RemoveSubscription(string topic, object subscriber, EventHandler handlerMethod)
         {
-            Ensure.ArgumentNotNull(handlerMethod, "handlerMethod");
+            if (handlerMethod == null)
+            {
+                throw new ArgumentNullException(nameof(handlerMethod));
+            }
 
             this.RemoveSubscription(topic, subscriber, handlerMethod.Method);
         }
@@ -304,7 +329,10 @@ namespace Appccelerate.EventBroker.Internals
         /// <param name="handlerMethod">The handler method.</param>
         public void RemoveSubscription<TEventArgs>(string topic, object subscriber, EventHandler<TEventArgs> handlerMethod) where TEventArgs : EventArgs
         {
-            Ensure.ArgumentNotNull(handlerMethod, "handlerMethod");
+            if (handlerMethod == null)
+            {
+                throw new ArgumentNullException(nameof(handlerMethod));
+            }
 
             IEventTopic eventTopic = this.eventTopicHost.GetEventTopic(topic);
 
@@ -313,21 +341,30 @@ namespace Appccelerate.EventBroker.Internals
 
         public void RemoveSubscription(string topic, object subscriber, Action<EventArgs> handlerMethod)
         {
-            Ensure.ArgumentNotNull(handlerMethod, "handlerMethod");
+            if (handlerMethod == null)
+            {
+                throw new ArgumentNullException(nameof(handlerMethod));
+            }
 
             this.RemoveSubscription(topic, subscriber, handlerMethod.Method);
         }
 
         public void RemoveSubscription(string topic, object subscriber, Action handlerMethod)
         {
-            Ensure.ArgumentNotNull(handlerMethod, "handlerMethod");
+            if (handlerMethod == null)
+            {
+                throw new ArgumentNullException(nameof(handlerMethod));
+            }
 
             this.RemoveSubscription(topic, subscriber, handlerMethod.Method);
         }
 
         public void RemoveSubscription<TEventArgValue>(string topic, object subscriber, Action<TEventArgValue> handlerMethod)
         {
-            Ensure.ArgumentNotNull(handlerMethod, "handlerMethod");
+            if (handlerMethod == null)
+            {
+                throw new ArgumentNullException(nameof(handlerMethod));
+            }
 
             this.RemoveSubscription(topic, subscriber, handlerMethod.Method);
         }

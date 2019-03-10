@@ -73,9 +73,7 @@ namespace Appccelerate.EventBroker
         /// <param name="factory">The factory.</param>
         public EventBroker(IFactory factory)
         {
-            Ensure.ArgumentNotNull(factory, "factory");
-
-            this.factory = factory;
+            this.factory = factory ?? throw new ArgumentNullException(nameof(factory));
 
             this.factory.Initialize(this);
 
@@ -113,7 +111,10 @@ namespace Appccelerate.EventBroker
         /// <param name="eventArgs">The <see cref="System.EventArgs"/> instance containing the event data.</param>
         public void Fire(string topic, object publisher, HandlerRestriction handlerRestriction, object sender, EventArgs eventArgs)
         {
-            Ensure.ArgumentNotNull(eventArgs, "eventArgs");
+            if (eventArgs == null)
+            {
+                throw new ArgumentNullException(nameof(eventArgs));
+            }
 
             IEventTopic eventTopic = this.eventTopicHost.GetEventTopic(topic);
             using (var spontaneousPublication = new SpontaneousPublication(eventTopic, publisher, eventArgs.GetType(), handlerRestriction, new List<IPublicationMatcher>()))

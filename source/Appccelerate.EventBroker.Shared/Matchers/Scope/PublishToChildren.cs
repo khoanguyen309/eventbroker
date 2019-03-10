@@ -38,8 +38,15 @@ namespace Appccelerate.EventBroker.Matchers.Scope
         /// <returns><code>true</code> if event has to be sent to the subscriber.</returns>
         public bool Match(IPublication publication, ISubscription subscription, EventArgs e)
         {
-            Ensure.ArgumentNotNull(publication, "publication");
-            Ensure.ArgumentNotNull(subscription, "subscription");
+            if (publication == null)
+            {
+                throw new ArgumentNullException(nameof(publication));
+            }
+
+            if (subscription == null)
+            {
+                throw new ArgumentNullException(nameof(subscription));
+            }
 
             object publisher = publication.Publisher;
             object subscriber = subscription.Subscriber;
@@ -56,7 +63,10 @@ namespace Appccelerate.EventBroker.Matchers.Scope
         /// <param name="writer">The writer the description is written to.</param>
         public void DescribeTo(System.IO.TextWriter writer)
         {
-            Ensure.ArgumentNotNull(writer, "writer");
+            if (writer == null)
+            {
+                throw new ArgumentNullException(nameof(writer));
+            }
             
             writer.Write("subscriber name starts with publisher name");
         }

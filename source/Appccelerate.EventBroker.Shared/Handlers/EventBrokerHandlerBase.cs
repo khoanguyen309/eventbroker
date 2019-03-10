@@ -62,7 +62,10 @@ namespace Appccelerate.EventBroker.Handlers
         /// <param name="eventTopic">The event topic.</param>
         protected void HandleSubscriberMethodException(TargetInvocationException targetInvocationException, IEventTopicInfo eventTopic)
         {
-            Ensure.ArgumentNotNull(targetInvocationException, "targetInvocationException");
+            if (targetInvocationException == null)
+            {
+                throw new ArgumentNullException(nameof(targetInvocationException));
+            }
 
             var innerException = targetInvocationException.InnerException;
             innerException.PreserveStackTrace();

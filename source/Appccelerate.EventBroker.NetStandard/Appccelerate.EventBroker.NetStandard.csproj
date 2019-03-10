@@ -26,7 +26,7 @@
 
   <ItemGroup>
     <Reference Include="Appccelerate.Fundamentals">
-      <HintPath>..\..\vendors\Appccelerate.Fundamentals.dll</HintPath>
+      <HintPath>..\..\vendors\Appccelerate.Fundamentals\netstandard2.0\Appccelerate.Fundamentals.dll</HintPath>
     </Reference>
   </ItemGroup>
 

@@ -60,7 +60,10 @@ namespace Appccelerate.EventBroker.Internals.Publications
 
         public override void DescribeTo(TextWriter writer)
         {
-            Ensure.ArgumentNotNull(writer, "writer");
+            if (writer == null)
+            {
+                throw new ArgumentNullException(nameof(writer));
+            }
 
             writer.Write(", spontaneous publication");
         }
