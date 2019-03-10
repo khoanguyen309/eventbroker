@@ -108,3 +108,7 @@ Backup*/
 UpgradeLog*.XML
 
 Specs
+source/.vs/Appccelerate.EventBroker/v15/Server/sqlite3/storage.ide-wal
+source/.vs/Appccelerate.EventBroker/v15/Server/sqlite3/db.lock
+source/.vs/Appccelerate.EventBroker/v15/Server/sqlite3/storage.ide-shm
+source/.vs/Appccelerate.EventBroker/v15/Server/sqlite3/storage.ide

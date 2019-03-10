@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appccelerate.EventBroker", "Appccelerate.EventBroker\Appccelerate.EventBroker.csproj", "{74A6407B-55B6-4F03-BA5C-44489DEC6D32}"
 EndProject
@@ -13,7 +13,20 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appccelerate.EventBroker.Pe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appccelerate.EventBroker.Sample", "Appccelerate.EventBroker.Sample\Appccelerate.EventBroker.Sample.csproj", "{90ECA914-28E3-4D9F-AD98-73D9A3DC4509}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{32CA9D5B-BE83-4776-88CA-AD35E4456938}"
+	ProjectSection(SolutionItems) = preProject
+		appccelerate.eventbroker.nuspec = appccelerate.eventbroker.nuspec
+	EndProjectSection
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Appccelerate.EventBroker.Shared", "Appccelerate.EventBroker.Shared\Appccelerate.EventBroker.Shared.shproj", "{DF2AA196-5FBB-42EB-B332-6813B691B702}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appccelerate.EventBroker.NetStandard", "Appccelerate.EventBroker.NetStandard\Appccelerate.EventBroker.NetStandard.csproj", "{1733C6E1-FF9B-4C66-A185-1C2DEEFA76D9}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Appccelerate.EventBroker.Shared\Appccelerate.EventBroker.Shared.projitems*{74a6407b-55b6-4f03-ba5c-44489dec6d32}*SharedItemsImports = 4
+		Appccelerate.EventBroker.Shared\Appccelerate.EventBroker.Shared.projitems*{df2aa196-5fbb-42eb-b332-6813b691b702}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -73,8 +86,23 @@ Global
 		{90ECA914-28E3-4D9F-AD98-73D9A3DC4509}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{90ECA914-28E3-4D9F-AD98-73D9A3DC4509}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{90ECA914-28E3-4D9F-AD98-73D9A3DC4509}.Release|x86.ActiveCfg = Release|Any CPU
+		{1733C6E1-FF9B-4C66-A185-1C2DEEFA76D9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1733C6E1-FF9B-4C66-A185-1C2DEEFA76D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1733C6E1-FF9B-4C66-A185-1C2DEEFA76D9}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{1733C6E1-FF9B-4C66-A185-1C2DEEFA76D9}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{1733C6E1-FF9B-4C66-A185-1C2DEEFA76D9}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{1733C6E1-FF9B-4C66-A185-1C2DEEFA76D9}.Debug|x86.Build.0 = Debug|Any CPU
+		{1733C6E1-FF9B-4C66-A185-1C2DEEFA76D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1733C6E1-FF9B-4C66-A185-1C2DEEFA76D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1733C6E1-FF9B-4C66-A185-1C2DEEFA76D9}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{1733C6E1-FF9B-4C66-A185-1C2DEEFA76D9}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{1733C6E1-FF9B-4C66-A185-1C2DEEFA76D9}.Release|x86.ActiveCfg = Release|Any CPU
+		{1733C6E1-FF9B-4C66-A185-1C2DEEFA76D9}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A377DD06-29D6-4A39-8201-04075136AFD3}
 	EndGlobalSection
 EndGlobal

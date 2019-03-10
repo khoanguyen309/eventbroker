@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Appccelerate.EventBroker</AssemblyName>
+    <RootNamespace>Appccelerate.EventBroker</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <OutputPath>bin\Debug</OutputPath>
+    <DocumentationFile>bin\Debug\Appccelerate.EventBroker.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <OutputPath>bin\Release</OutputPath>
+    <DocumentationFile>bin\Release\Appccelerate.EventBroker.xml</DocumentationFile>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Appccelerate.Fundamentals" Version="2.8.0" />
+  </ItemGroup>
+
+  <Import Project="..\Appccelerate.EventBroker.Shared\Appccelerate.EventBroker.Shared.projitems" Label="Shared" />
+
+</Project>
