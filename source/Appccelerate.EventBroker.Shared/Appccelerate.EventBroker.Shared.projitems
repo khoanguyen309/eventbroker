@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>df2aa196-5fbb-42eb-b332-6813b691b702</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Appccelerate.EventBroker</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)EventBroker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventPublicationAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventSubscriptionAttribute.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventTopicFireDelegate.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ExceptionExtensionMethods.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\EventBrokerException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Exceptions\ExceptionHandlingContext.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\EventBrokerExtensionBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Factories\StandardFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Factories\UnitTestFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GlobalSuppressions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)HandlerKind.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)HandlerRestriction.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Handlers\EventBrokerHandlerBase.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Handlers\NotUserInterfaceThreadException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Handlers\OnBackground.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Handlers\OnPublisher.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Handlers\OnUserInterface.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Handlers\OnUserInterfaceAsync.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Handlers\UserInterfaceSyncContextHolder.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IEventBroker.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IEventBrokerExtension.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IEventBrokerRegisterable.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IEventRegistrar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IEventTopic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IEventTopicExecuter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IEventTopicHost.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IEventTopicInfo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IExtensionHost.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IHandler.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)INamedItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\EventTopic.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\EventTopicHost.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Exceptions\EventTopicException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Exceptions\InvalidPublicationSignatureException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Exceptions\InvalidSubscriptionSignatureException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Exceptions\PublisherEventNotFoundException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Exceptions\RepeatedPublicationException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Exceptions\RepeatedSubscriptionException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Exceptions\StaticPublisherEventException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Exceptions\StaticSubscriberHandlerException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Exceptions\SubscriberHandlerNotFoundException.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\GlobalMatchers\GlobalMatchersHost.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\GlobalMatchers\IGlobalMatchersHost.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\GlobalMatchers\IGlobalMatchersProvider.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\IEventInspector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\IFactory.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Inspection\EventInspector.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Inspection\PropertyPublicationScanResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Inspection\PropertySubscriptionScanResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Inspection\ScanResult.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Publications\CodePublication.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Publications\PropertyPublication.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Publications\Publication.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Publications\SpontaneousPublication.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Registrar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Subscriptions\DelegateWrapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Subscriptions\EventArgsOnlyDelegateWrapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Subscriptions\IDelegateWrapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Subscriptions\NoArgumentsDelegateWrapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Subscriptions\SenderAndEventArgsDelegateWrapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Subscriptions\Subscription.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Internals\Subscriptions\UnwrappedEventArgsOnlyDelegateWrapper.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IPublication.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)IRegistrar.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ISubscription.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Matchers\IMatcher.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Matchers\IPublicationMatcher.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Matchers\ISubscriptionMatcher.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Matchers\NotAlreadyCanceled.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Matchers\Scope\PublishGlobal.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Matchers\Scope\PublishToChildren.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Matchers\Scope\PublishToParents.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Matchers\Scope\SubscribeGlobal.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Matchers\Scope\SubscribeToChildren.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Matchers\Scope\SubscribeToParents.cs" />
+  </ItemGroup>
+</Project>

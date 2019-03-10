@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Appccelerate.EventBroker", "Appccelerate.EventBroker\Appccelerate.EventBroker.csproj", "{74A6407B-55B6-4F03-BA5C-44489DEC6D32}"
 EndProject
@@ -18,7 +18,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		appccelerate.eventbroker.nuspec = appccelerate.eventbroker.nuspec
 	EndProjectSection
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Appccelerate.EventBroker.Shared", "Appccelerate.EventBroker.Shared\Appccelerate.EventBroker.Shared.shproj", "{DF2AA196-5FBB-42EB-B332-6813B691B702}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		Appccelerate.EventBroker.Shared\Appccelerate.EventBroker.Shared.projitems*{74a6407b-55b6-4f03-ba5c-44489dec6d32}*SharedItemsImports = 4
+		Appccelerate.EventBroker.Shared\Appccelerate.EventBroker.Shared.projitems*{df2aa196-5fbb-42eb-b332-6813b691b702}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Debug|Mixed Platforms = Debug|Mixed Platforms
@@ -81,5 +87,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A377DD06-29D6-4A39-8201-04075136AFD3}
 	EndGlobalSection
 EndGlobal
