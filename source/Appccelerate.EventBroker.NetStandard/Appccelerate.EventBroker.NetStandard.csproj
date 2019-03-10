@@ -9,17 +9,25 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <OutputPath>bin\Debug</OutputPath>
     <DocumentationFile>bin\Debug\Appccelerate.EventBroker.xml</DocumentationFile>
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
     <OutputPath>bin\Release</OutputPath>
     <DocumentationFile>bin\Release\Appccelerate.EventBroker.xml</DocumentationFile>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <WarningsAsErrors />
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
   </PropertyGroup>
 
-  <ItemGroup>
-    <PackageReference Include="Appccelerate.Fundamentals" Version="2.8.0" />
-  </ItemGroup>
-
   <Import Project="..\Appccelerate.EventBroker.Shared\Appccelerate.EventBroker.Shared.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <Reference Include="Appccelerate.Fundamentals">
+      <HintPath>..\..\vendors\Appccelerate.Fundamentals.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 
 </Project>
